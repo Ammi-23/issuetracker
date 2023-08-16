@@ -1,0 +1,109 @@
+<!-- if issues in project -->
+<% if(project.issues.length >= 1) { %>
+  
+    
+    <!-- Button trigger modal for search issues -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchissue" style="position: relative;
+    left: 25rem;">
+      Search
+    </button>
+
+    <!-- Modal for search issues-->
+    <div class="modal fade" id="searchissue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Search issues</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- search issue form by title and description -->
+            <form action="/" method="get" id="search-issue-form">
+                <div class="row mb-4 m-auto">
+                  <label for="title">Title</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="title" placeholder="Search by title.." id="title"/>
+                  </div>
+                </div>
+                <div class="row mb-3 m-auto">
+                  <label for="description">Description</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="description" placeholder="Search by description..." id="description"/>
+                  </div>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal for filter issues -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="position: relative;
+    left: 25rem;">
+      Filter
+    </button>
+
+    <!-- Modal for filter issues-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Filter Issue</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- form for filter issue by labels and author  -->
+            <form action="/" method="get" id="filter-issue-form">
+              <div class="row mb-4 m-auto">
+                <label for="labels">Search by label</label>
+                  <div class="col-sm-8">
+                    <% for( let label of project.labels) { %>
+                      <input name="labels" type="checkbox" value="<%= label %>" id="<%=label%>"/>
+                      <label for="<%=label%>"><%=label%> </label>
+                      <br />
+                    <% } %>
+                  </div>
+              </div>
+              <div class="row mb-3 m-auto">
+                <label for="authorlabel">Author</label>
+                  <div class="col-sm-8">
+                    <% for( let issue of project.issues ) { %>
+                      <input name="author" type="radio" value="<%= issue.author %>" id="<%= issue.author %>"/>
+                      <label for="<%= issue.author %>"><%= issue.author %></label><br />
+                    <% } %>
+                  </div>
+              </div>      
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<%}%>
+
+<!-- to show all issues in the project detail body -->
+<div id="issues-list">
+    <div class="issue-card">
+        <% for(let issue of project.issues){%>
+            <div class="issue-container">
+                <div class="issue-div">
+                    <p><strong> Title: </strong><%=issue.title%></p>
+                    <p><strong> Description: </strong><%=issue.description%></p>
+                    <p><strong> Author: </strong><%=issue.author%></p>
+                    <p><strong>Labels : </strong> <%= issue.labels %></p>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>
+
+<div id="issue-data" data="<%=JSON.stringify(project.issues)%>"></div>
+
+<!-- script file for filter and search functionality -->
+<script type="text/javascript" src="/js/filterIssue.js"></script>
+<script type="text/javascript" src="/js/searchIssue.js"></script>

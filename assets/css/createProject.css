@@ -1,0 +1,58 @@
+/* for form page */
+.container{
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.form-div{
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+#new-project{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 10%;
+}
+
+.input-div{
+    height: 4rem;
+    font-size: 1.5rem;
+    color: rgb(29, 26, 21);
+}
+
+input{
+    height:50%;
+    font-size: 1rem;
+    width: 25vw;
+}
+
+.des-label{
+    position: relative;
+    bottom: 35px;
+}
+
+textarea{
+    height:100%;
+    font-size: 1rem;
+    width:21vw;
+}
+.submit-div{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 18vw;
+    font-size: 1rem;
+    font-weight: 700;
+}

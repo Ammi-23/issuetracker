@@ -1,0 +1,24 @@
+<!-- css styling link for project detail page -->
+<link rel="stylesheet" href="/css/projectDetail.css">
+
+<div class="project-detail">
+    <div class="card-info">
+        <!-- card showing project info -->
+        <div class="project-card">
+            <h3>Project : <%= project.name %></h3>
+            <h5>Author : <%= project.author %></h5>
+            <h5>Description : <%= project.description %></h5>
+        </div>
+        <!-- button to redirect to issue form page -->
+        <button type="submit" class="btn btn-warning" style="height: 6vh"><a href="/projectDetail/issue-form/<%= project._id %>">Create Issue</a></button>
+    </div>
+    <!-- to include the issue page -->
+    <%- include('./partials/_issue_page');%>
+</div>
+
+    
+
+
+
+
+    

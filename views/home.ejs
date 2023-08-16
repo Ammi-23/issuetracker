@@ -1,0 +1,27 @@
+<!-- css style link for home page-->
+<link rel="stylesheet" href="/css/home.css">
+
+<!-- home page project container -->
+<main>
+    <div class="project-container">
+        <!-- loop to traverse over all the projects-->
+        <% for (let project of projects) {%>
+            <div class="project-div">
+                <div class="detail-div">
+                    <!-- each project name,description and author -->
+                    <p><strong> Name of the project: </strong><%=project.name%></p>
+                    <p><strong> Description: </strong><%=project.description%></p>
+                    <p><strong> Author: </strong><%=project.author%></p>
+                </div>
+                <!-- button to redirect to the project detail page -->
+                <div class="btn-div">
+                    <button type="submit" class="btn btn-light btn-sm"><a href='/projectDetail/<%= project._id%>'>Project Detail</a></button>
+                </div>
+            </div>
+        <%}%>
+        <div class="button-div">
+            <!-- button to redirect to the create project page -->
+            <button type=submit class="btn btn-light btn-sm"><a href="/create-Project">Create Project</a></button>
+        </div>
+    </div>
+</main>

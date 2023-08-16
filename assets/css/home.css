@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color:wheat;
+}
+/* for header */
+header{
+    height:15vh;
+    
+}
+
+.logo-div{
+    position: relative;
+    top: 4vh;
+    left: 8vw;
+}
+a{
+    text-decoration: none;
+}
+
+h1{
+    color: rgb(27, 23, 18);
+}
+/* for main body */
+main{
+    height: 80vh;
+    width: 100%;
+}
+
+.project-div{
+    height: 8rem;
+    width: 60%;
+    border: 2px solid #715b5b;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.project-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+.detail-div{
+    width: 40vw;
+    font-size: 0.9rem;
+    color: darkcyan;
+    padding:0.4rem;
+}
+
+.btn-div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
