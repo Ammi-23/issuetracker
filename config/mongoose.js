@@ -1,7 +1,7 @@
 //require the library
 const mongoose= require('mongoose');
 //connect to the database
-mongoose.connect('mongodb://127.0.0.1/project_db');
+mongoose.connect('mongodb+srv://ammipratima:Lock&key23@issuetracker.ycnmbwy.mongodb.net/?retryWrites=true&w=majority');
 const db = mongoose.connection;
 
 //if error in connecting db
