@@ -11,6 +11,7 @@
     height: 15vh;
     width: 40vw;
     position: relative;
+    background-color: lightgrey;
     border: 2px solid;
 }
 .issue-card{
@@ -42,7 +43,6 @@ p{
 .h3, h3 {
     font-size: calc(1rem + 0.5vw);
     font-weight: 300;
-    background-color: lightgrey;
     border-bottom: 2px solid darkolivegreen;
 }
 .h5, h5 {
